@@ -17,6 +17,15 @@ class App < Sinatra::Application
   end
 
   get '/tasks/:id' do
-    erb :show_task, locals: {:task => TASK_LIST[params[:id].to_i]}
+    erb :show_task, locals: {:id => params[:id], :task => TASK_LIST[params[:id].to_i]}
+  end
+
+  get '/tasks/:id/edit' do
+    erb :edit_task, locals: {:id => params[:id], :task => TASK_LIST[params[:id].to_i]}
+  end
+
+  put '/tasks/:id' do
+    TASK_LIST[params[:id].to_i] = params[:new_task_name]
+    redirect '/'
   end
 end

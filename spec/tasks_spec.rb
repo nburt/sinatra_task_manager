@@ -26,5 +26,15 @@ feature 'it manages tasks' do
         expect(page).to have_content 'Get milk'
       end
     end
+
+    and_the 'user can edit tasks' do
+      click_link 'Edit Task'
+      fill_in 'new_task_name', with: 'Get orange juice'
+      click_button 'Edit Task'
+      within 'ol' do
+        expect(page).to_not have_content 'Get milk'
+        expect(page).to have_content 'Get orange juice'
+      end
+    end
   end
 end
