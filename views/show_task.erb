@@ -5,5 +5,9 @@
 <body>
 <h1><%= task %></h1>
 <a href="/tasks/<%= id %>/edit">Edit Task</a>
+<form action="/tasks/<%= id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete Task</button>
+</form>
 </body>
 </html>

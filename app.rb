@@ -28,4 +28,9 @@ class App < Sinatra::Application
     TASK_LIST[params[:id].to_i] = params[:new_task_name]
     redirect '/'
   end
+
+  delete '/tasks/:id' do
+    TASK_LIST.delete_at(params[:id].to_i)
+    redirect '/'
+  end
 end

@@ -36,5 +36,13 @@ feature 'it manages tasks' do
         expect(page).to have_content 'Get orange juice'
       end
     end
+
+    and_the 'user can delete tasks' do
+      click_link 'Show Task'
+      click_button 'Delete Task'
+      within 'ol' do
+        expect(page).to_not have_content 'Get orange juice'
+      end
+    end
   end
 end
