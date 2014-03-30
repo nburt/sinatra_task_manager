@@ -4,5 +4,11 @@
 </head>
 <body>
 <h1>Welcome to your Task Manager</h1>
+<a href="/tasks/new">Add Task</a>
+<ol>
+  <% TASK_LIST.each do |task| %>
+    <li><%= task %></li>
+  <% end %>
+</ol>
 </body>
 </html>
