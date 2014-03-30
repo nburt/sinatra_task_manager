@@ -19,5 +19,12 @@ feature 'it manages tasks' do
         expect(page).to have_content 'Get milk'
       end
     end
+
+    and_the 'user can view tasks individually' do
+      click_link 'Show Task'
+      within 'h1' do
+        expect(page).to have_content 'Get milk'
+      end
+    end
   end
 end

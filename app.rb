@@ -15,4 +15,8 @@ class App < Sinatra::Application
     TASK_LIST << params[:add_task]
     redirect '/'
   end
+
+  get '/tasks/:id' do
+    erb :show_task, locals: {:task => TASK_LIST[params[:id].to_i]}
+  end
 end
