@@ -4,7 +4,7 @@ class App < Sinatra::Application
   TASK_LIST = []
 
   get '/' do
-    erb :index
+    erb :index, locals: {:task_list => TASK_LIST}
   end
 
   get '/tasks/new' do
