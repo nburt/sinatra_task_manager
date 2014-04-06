@@ -11,4 +11,8 @@ class TasksHelper
   def display_tasks
     @task_list
   end
+
+  def edit(id, new_task)
+    @task_list[id] = new_task
+  end
 end
