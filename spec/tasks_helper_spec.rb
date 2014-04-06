@@ -15,4 +15,11 @@ describe TasksHelper do
     tasks_helper.edit(0, 'Get butter')
     expect(tasks_helper.display_tasks).to eq ['Get butter']
   end
+
+  it 'can delete tasks' do
+    tasks_helper = TasksHelper.new
+    tasks_helper.add('Get milk')
+    tasks_helper.delete(0)
+    expect(tasks_helper.display_tasks).to eq []
+  end
 end

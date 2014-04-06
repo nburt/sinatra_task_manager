@@ -15,4 +15,8 @@ class TasksHelper
   def edit(id, new_task)
     @task_list[id] = new_task
   end
+
+  def delete(id)
+    @task_list.delete_at(id)
+  end
 end
