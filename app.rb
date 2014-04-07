@@ -26,7 +26,7 @@ class App < Sinatra::Application
   end
 
   put '/tasks/:id' do
-    TASK_LIST.edit(params[:id].to_i, params[:new_task_name].to_s)
+    TASK_LIST.edit(params[:id].to_i, params[:new_task_name])
     redirect '/'
   end
 
